@@ -5,23 +5,23 @@ import type { Score, Measure, Token } from './types';
 // ═══════════════════════════════════════════════
 const C = {
   // 字符宽度
-  noteW: 18, dotW: 7, dashW: 16,
-  tokenGap: 14, measurePad: 16,
+  noteW: 32, dotW: 12, dashW: 28,
+  tokenGap: 24, measurePad: 28,
 
   // 小节线
-  barlineW: 1.2, endBarlineW: 3.5, barlineGap: 4,
+  barlineW: 2, endBarlineW: 6, barlineGap: 7,
 
   // 字号
-  melodyFS: 24, rhythmFS: 20, percFS: 18,
-  lyricFS: 14, titleFS: 38, subtitleFS: 16, labelFS: 15,
+  melodyFS: 42, rhythmFS: 34, percFS: 30,
+  lyricFS: 24, titleFS: 64, subtitleFS: 28, labelFS: 26,
 
   // 垂直位置（相对于行顶部）
-  labelY: -5, lyricY: -20,
-  barlineTop: 5,
-  melodyY: 28, underlineY: 38, underlineGap: 4,
-  rhythmY: 58, percY: 82,
-  barlineBottom: 95,
-  lineHeight: 115, lineGap: 25,
+  labelY: -8, lyricY: -34,
+  barlineTop: 8,
+  melodyY: 48, underlineY: 66, underlineGap: 7,
+  rhythmY: 100, percY: 142,
+  barlineBottom: 165,
+  lineHeight: 200, lineGap: 42,
 
   // 颜色
   melodyColor: '#1a1a1a',
@@ -32,8 +32,8 @@ const C = {
   bgColor: '#fdfbf7',
 
   // 布局
-  maxWidth: 920, marginLeft: 20,
-  titleY: 40, subtitleY: 65, notesY: 88, contentStartY: 120,
+  maxWidth: 1600, marginLeft: 36,
+  titleY: 68, subtitleY: 112, notesY: 150, contentStartY: 210,
 };
 
 // ═══════════════════════════════════════════════
@@ -79,11 +79,11 @@ function melodyTokenWidth(token: Token): number {
 }
 
 function rhythmTokenWidth(token: Token): number {
-  return token.text.length * 12 + C.tokenGap;
+  return token.text.length * 20 + C.tokenGap;
 }
 
 function percTokenWidth(token: Token): number {
-  return token.text.length * 18 + C.tokenGap;
+  return token.text.length * 30 + C.tokenGap;
 }
 
 function measureWidth(measure: Measure): number {
@@ -144,13 +144,13 @@ function renderMelodyToken(token: Token, x: number, y: number): RenderResult {
 }
 
 function renderRhythmToken(token: Token, x: number, y: number): RenderResult {
-  const w = token.text.length * 12;
-  const svg = `<text x="${x}" y="${y}" font-size="${C.rhythmFS}" fill="${C.rhythmColor}" font-family="SimSun, monospace" letter-spacing="1">${esc(token.text)}</text>`;
+  const w = token.text.length * 20;
+  const svg = `<text x="${x}" y="${y}" font-size="${C.rhythmFS}" fill="${C.rhythmColor}" font-family="SimSun, monospace" letter-spacing="2">${esc(token.text)}</text>`;
   return { width: w + C.tokenGap, svg };
 }
 
 function renderPercToken(token: Token, x: number, y: number): RenderResult {
-  const w = token.text.length * 18;
+  const w = token.text.length * 30;
   const svg = `<text x="${x}" y="${y}" font-size="${C.percFS}" fill="${C.percColor}" font-family="KaiTi, STKaiti, serif">${esc(token.text)}</text>`;
   return { width: w + C.tokenGap, svg };
 }
