@@ -33,15 +33,15 @@ const C = {
   voiceLabelX: 8,         // 声部标签 X 偏移
 
   // 颜色
-  melodyColor: '#1a1a1a',
-  rhythmColor: '#555555',
-  percColor: '#8B4513',
-  barlineColor: '#333333',
-  lyricColor: '#666666',
-  bgColor: '#fdfbf7',
-  voiceSepColor: '#d0c8b8',
-  slurColor: '#444444',
-  voiceLabelColor: '#bbb0a0',
+  melodyColor: '#000000',
+  rhythmColor: '#000000',
+  percColor: '#000000',
+  barlineColor: '#000000',
+  lyricColor: '#000000',
+  bgColor: '#ffffff',
+  voiceSepColor: '#cccccc',
+  slurColor: '#000000',
+  voiceLabelColor: '#999999',
 
   // 布局
   maxWidth: 1600, marginLeft: 60,
