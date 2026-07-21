@@ -332,7 +332,7 @@ export function renderScore(score: Score): string {
   }
 
   // 生成 SVG
-  let svg = `<svg viewBox="0 0 ${totalW} ${totalH}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:${totalW}px;" font-family="SimSun, Songti SC, serif">`;
+  let svg = `<svg viewBox="0 0 ${totalW} ${totalH}" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="SimSun, Songti SC, serif">`;
   svg += `<rect width="${totalW}" height="${totalH}" fill="${C.bg}"/>`;
 
   // 标题

@@ -6,7 +6,7 @@ const svgString = renderScore(score);
 container.innerHTML = svgString;
 
 // 缩放控制
-let zoom = 1.5;
+let zoom = 3;
 const zoomLevel = document.getElementById('zoom-level')!;
 
 function updateZoom(): void {
@@ -15,17 +15,17 @@ function updateZoom(): void {
 }
 
 document.getElementById('zoom-in')!.addEventListener('click', () => {
-  zoom = Math.min(zoom + 0.1, 3);
+  zoom = Math.min(zoom + 0.2, 6);
   updateZoom();
 });
 
 document.getElementById('zoom-out')!.addEventListener('click', () => {
-  zoom = Math.max(zoom - 0.1, 0.3);
+  zoom = Math.max(zoom - 0.2, 0.5);
   updateZoom();
 });
 
 document.getElementById('zoom-reset')!.addEventListener('click', () => {
-  zoom = 1;
+  zoom = 3;
   updateZoom();
 });
 
