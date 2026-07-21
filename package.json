@@ -1,0 +1,15 @@
+{
+  "name": "jianpu-renderer",
+  "version": "0.1.0",
+  "description": "简谱渲染器 - 基于 SVG 的数字简谱排版引擎",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.4.0"
+  }
+}
