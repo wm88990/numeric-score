@@ -7,13 +7,24 @@ export interface Token {
   beam?: number;
 }
 
-/** 一个小节，包含三行内容 */
+/** 连音线/圆滑线，连接同一小节内的两个 token */
+export interface Tie {
+  /** 起始 token 索引（melody 数组中的下标） */
+  from: number;
+  /** 结束 token 索引 */
+  to: number;
+  /** 弧线类型 */
+  type?: 'slur' | 'tie';
+}
+
+/** 一个小节，包含上下两个声部 */
 export interface Measure {
-  melody: Token[];       // 旋律行（数字简谱）
-  rhythm: Token[];       // 节奏行（打击乐符号 X/0X 等）
-  percussion: Token[];   // 锣鼓词行（当当/请 等）
+  melody: Token[];       // 上声部：旋律行（数字简谱）
+  rhythm: Token[];       // 下声部：节奏行（打击乐符号 X/0X 等）
+  percussion: Token[];   // 下声部：锣鼓词行（当当/请 等）
   lyric?: string;        // 小节上方唱词
   barline?: 'single' | 'end' | 'repeat-start' | 'repeat-end';
+  ties?: Tie[];          // 上声部连音线/圆滑线
 }
 
 /** 一行乐谱（可跨多个视觉行） */
