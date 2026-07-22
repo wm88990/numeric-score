@@ -276,11 +276,11 @@ function renderMeasure(measure: Measure, x: number, y: number, showVoiceLabel: b
     cx += r.width;
   }
 
-  // ── 旋律下方唱词（首字对齐到小节第一个音符）──
+  // ── 旋律下方唱词（首字左对齐到小节第一个音符左侧）──
   if (measure.melodyLyrics && measure.melodyLyrics.length > 0 && melodyPositions.length > 0) {
-    let lx = melodyPositions[0].centerX;
+    let lx = melodyPositions[0].startX;
     for (const char of measure.melodyLyrics) {
-      svg += `<text x="${lx}" y="${y + C.melodyLyricY}" font-size="${C.melodyLyricFS}" fill="${C.melodyColor}" text-anchor="middle" font-family="KaiTi, STKaiti, serif">${esc(char)}</text>`;
+      svg += `<text x="${lx}" y="${y + C.melodyLyricY}" font-size="${C.melodyLyricFS}" fill="${C.melodyColor}" text-anchor="start" font-family="KaiTi, STKaiti, serif">${esc(char)}</text>`;
       lx += 28;
     }
   }

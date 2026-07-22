@@ -8,7 +8,7 @@ let svgString = renderScore(currentScore);
 container.innerHTML = svgString;
 
 // 缩放控制
-let zoom = 7.5;
+let zoom = 3;
 const zoomLevel = document.getElementById('zoom-level')!;
 
 function updateZoom(): void {
@@ -28,7 +28,7 @@ document.getElementById('zoom-out')!.addEventListener('click', () => {
 });
 
 document.getElementById('zoom-reset')!.addEventListener('click', () => {
-  zoom = 7.5;
+  zoom = 3;
   updateZoom();
 });
 
