@@ -333,7 +333,7 @@ export function renderScore(score: Score): string {
 
   // 生成 SVG
   let svg = `<svg viewBox="0 0 ${totalW} ${totalH}" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="SimSun, Songti SC, serif">`;
-  svg += `<rect width="${totalW}" height="${totalH}" fill="${C.bg}"/>`;
+  svg += `<rect width="${totalW}" height="${totalH}" fill="${C.bgColor}"/>`;
 
   // 标题
   svg += `<text x="${totalW / 2}" y="${C.titleY}" font-size="${C.titleFS}" fill="${C.melodyColor}" text-anchor="middle" font-family="SimHei, sans-serif" font-weight="bold">${esc(score.title)}</text>`;
