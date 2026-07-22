@@ -20,28 +20,28 @@ const C = {
   labelY: -6,
   barlineTop: 4,
 
-  // 第1行：锣鼓词行（最上方）
-  percY: 28,
+  // 第1行：旋律行（最上方）
+  melodyY: 32,
+  underlineY: 46, underlineGap: 5,  // 下划线紧贴数字底部
 
-  // 第2行：节奏行
-  rhythmY: 62,
-
-  // 第3行：旋律行
-  melodyY: 100,
-  underlineY: 114, underlineGap: 5,  // 下划线紧贴数字底部
-
-  // 连音线弧线（旋律行上方，即节奏行与旋律行之间）
-  slurY: 84,
+  // 连音线弧线（旋律行上方）
+  slurY: 14,
   slurHeight: 14,
 
-  // 第4行：唱词行（旋律下方）
-  melodyLyricFS: 20, melodyLyricY: 142,
+  // 第2行：唱词行
+  melodyLyricFS: 20, melodyLyricY: 72,
 
-  // 上方唱词行（锣鼓词与节奏之间）
-  lyricY: 48,
+  // 上方唱词标注
+  lyricY: 72,
 
-  barlineBottom: 162,
-  lineHeight: 185, lineGap: 30,
+  // 第3行：节奏行
+  rhythmY: 100,
+
+  // 第4行：锣鼓词行（最下方）
+  percY: 134,
+
+  barlineBottom: 158,
+  lineHeight: 180, lineGap: 30,
 
   // 声部标签
   voiceLabelFS: 18,
@@ -242,7 +242,7 @@ function renderMeasure(measure: Measure, x: number, y: number, showVoiceLabel: b
   // ── 声部标签 ──
   if (showVoiceLabel) {
     svg += `<text x="${C.voiceLabelX}" y="${y + C.melodyY}" font-size="${C.voiceLabelFS}" fill="${C.voiceLabelColor}" font-family="SimSun, serif">上</text>`;
-    svg += `<text x="${C.voiceLabelX}" y="${y + C.rhythmY}" font-size="${C.voiceLabelFS}" fill="${C.voiceLabelColor}" font-family="SimSun, serif">下</text>`;
+    svg += `<text x="${C.voiceLabelX}" y="${y + C.percY}" font-size="${C.voiceLabelFS}" fill="${C.voiceLabelColor}" font-family="SimSun, serif">下</text>`;
   }
 
   // ── 第1行：锣鼓词行（最上方）──
