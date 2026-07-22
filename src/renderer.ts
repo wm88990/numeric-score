@@ -276,18 +276,12 @@ function renderMeasure(measure: Measure, x: number, y: number, showVoiceLabel: b
     cx += r.width;
   }
 
-  // ── 旋律下方唱词（按小节居中对齐）──
-  if (measure.melodyLyrics && measure.melodyLyrics.length > 0) {
-    const measureCenterX = x + mw / 2;
-    if (measure.melodyLyrics.length === 1) {
-      svg += `<text x="${measureCenterX}" y="${y + C.melodyLyricY}" font-size="${C.melodyLyricFS}" fill="${C.melodyColor}" text-anchor="middle" font-family="KaiTi, STKaiti, serif">${esc(measure.melodyLyrics[0])}</text>`;
-    } else {
-      const totalW = measure.melodyLyrics.length * 28;
-      let startLX = measureCenterX - totalW / 2;
-      for (const char of measure.melodyLyrics) {
-        svg += `<text x="${startLX + 14}" y="${y + C.melodyLyricY}" font-size="${C.melodyLyricFS}" fill="${C.melodyColor}" text-anchor="middle" font-family="KaiTi, STKaiti, serif">${esc(char)}</text>`;
-        startLX += 28;
-      }
+  // ── 旋律下方唱词（首字对齐到小节第一个音符）──
+  if (measure.melodyLyrics && measure.melodyLyrics.length > 0 && melodyPositions.length > 0) {
+    let lx = melodyPositions[0].centerX;
+    for (const char of measure.melodyLyrics) {
+      svg += `<text x="${lx}" y="${y + C.melodyLyricY}" font-size="${C.melodyLyricFS}" fill="${C.melodyColor}" text-anchor="middle" font-family="KaiTi, STKaiti, serif">${esc(char)}</text>`;
+      lx += 28;
     }
   }
 
