@@ -37,12 +37,15 @@ const C = {
   slurY: 92,
   slurHeight: 14,
 
-  barlineBottom: 138,
-  lineHeight: 160, lineGap: 30,
+  barlineBottom: 158,
+  lineHeight: 180, lineGap: 30,
 
   // 声部标签
   voiceLabelFS: 18,
   voiceLabelX: 6,
+
+  // 旋律下方唱词
+  melodyLyricFS: 20, melodyLyricY: 138,
 
   // 附点偏移（右上方）
   dotOffsetX: 2, dotOffsetY: -10,
@@ -271,6 +274,16 @@ function renderMeasure(measure: Measure, x: number, y: number, showVoiceLabel: b
     svg += r.svg;
     melodyPositions.push(r.pos);
     cx += r.width;
+  }
+
+  // ── 旋律下方唱词 ──
+  if (measure.melodyLyrics && melodyPositions.length > 0) {
+    for (let li = 0; li < measure.melodyLyrics.length && li < melodyPositions.length; li++) {
+      const lyricChar = measure.melodyLyrics[li];
+      if (lyricChar) {
+        svg += `<text x="${melodyPositions[li].centerX}" y="${y + C.melodyLyricY}" font-size="${C.melodyLyricFS}" fill="${C.melodyColor}" text-anchor="middle" font-family="KaiTi, STKaiti, serif">${esc(lyricChar)}</text>`;
+      }
+    }
   }
 
   // ── 连音线（旋律行上方，节奏与旋律之间）──

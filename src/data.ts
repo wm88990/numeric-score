@@ -25,18 +25,18 @@ export const score: Score = {
       measures: [
         {
           melody: [t('5·6'), t('7672')], rhythm: [t('0X'), t('XXX')], percussion: [t('当当'), t('当当')],
-          ties: [tie(0, 1)],
+          ties: [tie(0, 1)], melodyLyrics: ['诵', '经'],
         },
         {
           melody: [t('676'), t('5')], rhythm: [t('X'), t('-')], percussion: [t('当当')],
-          ties: [tie(0, 1)],
+          ties: [tie(0, 1)], melodyLyrics: ['功', '德'],
         },
-        { melody: [t('2·7'), t('6')], rhythm: e, percussion: [t('当当')], ties: [tie(0, 1)] },
-        { melody: [t('672'), t('276')], rhythm: e, percussion: [t('当当'), t('当当')], ties: [tie(0, 1)] },
-        { melody: [t('5·6'), t('5')], rhythm: e, percussion: [t('当当')], ties: [tie(0, 1)] },
-        { melody: [t('561'), t('165')], rhythm: e, percussion: [t('当当当当')], ties: [tie(0, 1)] },
-        { melody: [t('1'), t('2321')], rhythm: e, percussion: [t('当当'), t('当当')], ties: [tie(0, 1)] },
-        { melody: [t('216')], rhythm: e, percussion: [t('当当')], barline: 'end' },
+        { melody: [t('2·7'), t('6')], rhythm: e, percussion: [t('当当')], ties: [tie(0, 1)], melodyLyrics: ['无', '量'] },
+        { melody: [t('672'), t('276')], rhythm: e, percussion: [t('当当'), t('当当')], ties: [tie(0, 1)], melodyLyrics: ['海', '中'] },
+        { melody: [t('5·6'), t('5')], rhythm: e, percussion: [t('当当')], ties: [tie(0, 1)], melodyLyrics: ['一', '音'] },
+        { melody: [t('561'), t('165')], rhythm: e, percussion: [t('当当当当')], ties: [tie(0, 1)], melodyLyrics: ['演', '说'] },
+        { melody: [t('1'), t('2321')], rhythm: e, percussion: [t('当当'), t('当当')], ties: [tie(0, 1)], melodyLyrics: ['百', '千万'] },
+        { melody: [t('216')], rhythm: e, percussion: [t('当当')], barline: 'end', melodyLyrics: ['亿'] },
       ],
     },
     // ── 二 ──

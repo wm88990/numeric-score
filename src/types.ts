@@ -23,6 +23,7 @@ export interface Measure {
   rhythm: Token[];       // 下声部：节奏行（打击乐符号 X/0X 等）
   percussion: Token[];   // 下声部：锣鼓词行（当当/请 等）
   lyric?: string;        // 小节上方唱词
+  melodyLyrics?: string[]; // 旋律下方唱词（每个token对应一个字）
   barline?: 'single' | 'end' | 'repeat-start' | 'repeat-end';
   ties?: Tie[];          // 上声部连音线/圆滑线
 }
